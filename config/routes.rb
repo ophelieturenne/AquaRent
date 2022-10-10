@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "equipments#home"
   # get '/equipments', to: 'equipments#index'
   # get '/equipments/:id/', to: 'bookings#new'
   # post '/equipments/:id/', to: 'bookings#new'
