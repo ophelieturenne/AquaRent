@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "creating list for materials"
+
+Category.destroy_all
+# Material.destroy_all
+# Booking.destroy_all
+
+category1 = Category.new(name: "paddle")
+category2 = Category.new(name: "board")
+
+category1.save
+category2.save
+
+puts "Finished"
