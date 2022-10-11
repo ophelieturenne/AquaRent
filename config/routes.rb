@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root to: "pages#home"
+  get "categories" , to: "categories#index"
+  get "categories/:id" , to: "categories#show"
   devise_for :users
   # get '/materials', to: 'materials#index'
   # get '/materials/:id/', to: 'bookings#new'
