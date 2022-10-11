@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :materials , only: %i[show] do
     resources :bookings
   end
+  resources :bookings, only: %i[index]
   devise_for :users
   # get '/materials', to: 'materials#index'
   # get '/materials/:id/', to: 'bookings#new'

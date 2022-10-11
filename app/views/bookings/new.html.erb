@@ -1,1 +1,10 @@
-<h2>new</h2>
+<h3>Create a new booking</h3>
+
+<h4>Making a booking for <%= @material.name %> </h4>
+<%= simple_form_for @booking do |f| %>
+  <%= f.label :start_date, "From:" %>
+  <%= f.date_select :start_date %>
+  <%= f.label :end_date, "To:" %>
+  <%= f.date_select :end_date %>
+  <%= f.submit class: 'btn btn-flat' %>
+<% end %>
