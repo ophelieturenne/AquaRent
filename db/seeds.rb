@@ -12,10 +12,13 @@ Category.destroy_all
 # Material.destroy_all
 # Booking.destroy_all
 
-category1 = Category.new(name: "paddle")
-category2 = Category.new(name: "board")
+category1 = Category.new(name: "Boards")
+category2 = Category.new(name: "Wind sports")
+category3 = Category.new(name: "others")
+
 
 category1.save
 category2.save
+category3.save
 
 puts "Finished"
