@@ -34,7 +34,7 @@ category3.save
 puts "creating materials"
 
 file = URI.open("https://res.cloudinary.com/dvp1v2dej/image/upload/v1665561920/aquarent/canoe_zooayz.jpg")
-material = Material.new(name: "Canoe", price: 600, category: category2)
+material = Material.new(name: "Canoe", price: 600, category: category1)
 material.photo.attach(io: file, filename: "canoe.png", content_type: "image/png")
 material.save
 
@@ -45,23 +45,23 @@ material1.photo.attach(io: file, filename: "fly_board.png", content_type: "image
 material1.save
 
 file = URI.open("https://res.cloudinary.com/dvp1v2dej/image/upload/v1665561890/aquarent/kayak_f8wwpj.jpg")
-material2 = Material.new(name: "Kayak", price: 600, category: category2)
+material2 = Material.new(name: "Kayak", price: 600, category: category1)
 material2.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
 material2.save
 
 file = URI.open("https://res.cloudinary.com/dvp1v2dej/image/upload/v1665561890/aquarent/surf_board_fndqce.jpg")
-material3 = Material.new(name: "Surf Board", price: 600, category: category2)
+material3 = Material.new(name: "Surf Board", price: 600, category: category1)
 material3.photo.attach(io: file, filename: "surf.png", content_type: "image/png")
 material3.save
 
 
 file = URI.open("https://res.cloudinary.com/dvp1v2dej/image/upload/v1665561890/aquarent/wind_foiling_g2ubyi.jpg")
-material4 = Material.new(name: "wind foiling", price: 600, category: category1)
+material4 = Material.new(name: "wind foiling", price: 600, category: category3)
 material4.photo.attach(io: file, filename: "wind_foiling.png", content_type: "image/png")
 material4.save
 
 file = URI.open("https://res.cloudinary.com/dvp1v2dej/image/upload/v1665561890/aquarent/fishing_rod_xopehu.jpg")
-material5 = Material.new(name: "fishing Rod", price: 600, category: category2)
+material5 = Material.new(name: "fishing Rod", price: 600, category: category3)
 material5.photo.attach(io: file, filename: "fishing_rod.png", content_type: "image/png")
 material5.save
 
