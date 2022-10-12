@@ -8,10 +8,11 @@
 
 puts "cleaning database"
 
-User.destroy_all
-Material.destroy_all
-Category.destroy_all
 Booking.destroy_all
+Material.destroy_all
+User.destroy_all
+Category.destroy_all
+
 
 
 puts "creating categories"
