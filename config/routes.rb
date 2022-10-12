@@ -7,16 +7,13 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: %i[index destroy]
   devise_for :users
-  # get '/materials', to: 'materials#index'
-  # get '/materials/:id/', to: 'bookings#new'
-  # post '/materials/:id/', to: 'bookings#new'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :categories, only: %i[index show] do
-    resources :bookings
-  end
+  # resources :categories, only: %i[index show] do
+  #   resources :bookings
+  # end
 end
