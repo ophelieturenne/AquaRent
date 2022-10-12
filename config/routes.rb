@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root to: "categories#index"
   resources :categories, only: %i[index show]
   resources :materials , only: %i[show] do
-    resources :bookings
+    resources :bookings, except: %i[index destroy]
   end
-  resources :bookings, only: %i[index]
+  resources :bookings, only: %i[index destroy]
   devise_for :users
   # get '/materials', to: 'materials#index'
   # get '/materials/:id/', to: 'bookings#new'

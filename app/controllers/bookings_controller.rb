@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @material = Material.find(params[:material_id])
     @booking = Booking.new(booking_params)
     @booking.material = @material
-    # @booking.user = current_user
+    @booking.user = current_user
     if @booking.save
       redirect_to bookings_path
     else
@@ -31,9 +31,9 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to bookings_path, status: :see_other
   end
-end
 
-private
-def booking_params
-  params.require(:booking).permit(:start_date, :end_date, :material_id)
+  private
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :material_id)
+  end
 end
