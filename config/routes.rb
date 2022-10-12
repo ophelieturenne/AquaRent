@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   # root to: "pages#home"
   root to: "categories#index"
-  # get "categories" , to: "categories#index"
-  # get "categories/:id" , to: "categories#show"
-  # get "categories/:category_id/bookings/new" , to: "bookings#new"
-  # post "categories/:id/bookings" , to: "bookings#create"
-  # delete "bookings/:id" , to: "bookings#destroy"
+  resources :categories, only: %i[index show]
+  resources :materials , only: %i[show] do
+    resources :bookings, except: %i[index destroy]
+  end
+  resources :bookings, only: %i[index destroy]
   devise_for :users
   # get '/materials', to: 'materials#index'
   # get '/materials/:id/', to: 'bookings#new'

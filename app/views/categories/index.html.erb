@@ -1,5 +1,7 @@
-<h1>Categories</h1>
+<h2>My nautique equipments</h2>
 
 <% @categories.each do |category| %>
-  <%= category.name %>
+  <%= link_to category_path(category), class:"text-decoration-none" do %>
+    <%= category.name %>
+  <% end %>
 <% end %>
