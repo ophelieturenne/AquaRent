@@ -18,3 +18,12 @@
 @import "categories/cards";
 @import "categories/banner";
 @import "categories/search-form";
+@import "components/img";
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
