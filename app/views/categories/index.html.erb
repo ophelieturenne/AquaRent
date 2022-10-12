@@ -14,16 +14,15 @@
   </div>
 </div>
 
-<h2>My nautique equipments</h2>
+<h2>List categories</h2>
 
 
   <div class="main-container">
     <% @categories.each do |category| %>
-      <div class="card p-5" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
-        <%= category.name  %>
-      </div>
-      <%= link_to category_path(category), class:"text-decoration-none" do %>
-        <%= category.name %>
+      <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
+      <%= link_to category_path(category), class:"text-decoration-none text_for_card" do %>
+      <%= category.name %>
       <% end %>
+      </div>
     <% end %>
   </div>
