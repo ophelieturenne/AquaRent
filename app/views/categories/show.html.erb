@@ -1,1 +1,7 @@
 <h1>show</h1>
+
+<% @materials.each do |material| %>
+  <%= material.name %>
+  <%= material.price %>
+  <%= link_to "Book Now", new_material_booking_path(material) %>
+<% end %>

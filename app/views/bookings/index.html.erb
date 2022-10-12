@@ -1,0 +1,8 @@
+<h2>My bookings</h2>
+
+<% @bookings.each do |booking| %>
+  <%= booking.material_id %>
+  <%= booking.start_date %>
+  <%= booking.end_date %>
+  <%= link_to "delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this booking"} %>
+<% end %>
