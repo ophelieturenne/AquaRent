@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :bookings, dependent: :destroy
   # validates :email, presence: true, format: { with: /^(.+)@(.+)\.(.+)$/, message: "Email invalid" }, uniqueness: { case_sensitive: false }
   # validates :encrypted_password, uniqueness: true
 
