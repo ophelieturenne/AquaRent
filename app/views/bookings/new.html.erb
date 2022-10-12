@@ -1,8 +1,8 @@
-<h3>Create a new booking</h3>
+<h3>Create a new booking for:</h3>
 
 <div class ="d-flex align-items-center">
 <div class="card-product">
-  <h4>Making a booking for <%= @material.name %> </h4>
+  <h4> <strong><%= @material.name %> </strong></h4>
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
 </div>
 
@@ -19,5 +19,5 @@
    </div>
   </div>
      <%= f.submit class: 'btn btn-flat' %>
-<% end %>
+  <% end %>
 </div>
