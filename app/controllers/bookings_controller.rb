@@ -14,7 +14,8 @@ class BookingsController < ApplicationController
     @material = Material.find(params[:material_id])
     @booking = Booking.new(booking_params)
     @booking.material = @material
-    if @bookmark.save
+    # @booking.user = current_user
+    if @booking.save
       redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
@@ -22,10 +23,13 @@ class BookingsController < ApplicationController
 
   end
 
+  def edit
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to material_bookings_path, status: :see_other
+    redirect_to bookings_path, status: :see_other
   end
 end
 
