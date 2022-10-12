@@ -16,8 +16,8 @@ Booking.destroy_all
 
 puts "creating categories"
 category1 = Category.new(name: "Boards")
-category2 = Category.new(name: "Wind sports")
-category3 = Category.new(name: "others")
+category2 = Category.new(name: "Sailings")
+category3 = Category.new(name: "Others")
 
 
 
