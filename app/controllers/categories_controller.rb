@@ -17,5 +17,4 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @materials = @category.materials
   end
-
 end
