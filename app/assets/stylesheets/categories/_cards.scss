@@ -1,0 +1,28 @@
+.cards {
+  display: grid;
+  width: 100;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+  flex-grow: 1;
+
+}
+
+.card {
+  color: white;
+  width: 500px;
+  text-align: center;
+  padding: 100px;
+
+}
+
+.text_for_card {
+  color: white;
+font-size: xx-large;
+
+}
+
+.card:hover{
+transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}

@@ -17,12 +17,18 @@ Material.destroy_all
 Category.destroy_all
 User.destroy_all
 
+
 puts "creating categories"
-# categories
-category1 = Category.new(name: "paddle")
-category2 = Category.new(name: "board")
+category1 = Category.new(name: "Boards")
+category2 = Category.new(name: "Sailings")
+category3 = Category.new(name: "Others")
+
+
+
+
 category1.save
 category2.save
+category3.save
 
 
 puts "creating materials"
