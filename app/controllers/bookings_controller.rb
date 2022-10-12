@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+
     @material = Material.find(params[:material_id])
     @booking = Booking.new(booking_params)
     @booking.material = @material
