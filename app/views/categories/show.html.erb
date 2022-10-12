@@ -4,6 +4,7 @@
 <%# taken from ui kit le wagon %>
 <%# It will do a loop on the information from the material table %>
 <% @materials.each do |material| %>
+<<<<<<< HEAD
 <div>
   <div class="cards">
     <div class = "background_card">
@@ -22,4 +23,10 @@
 
   </div>
 </div>
+=======
+  <%= cl_image_tag material.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= material.name %>
+  <%= material.price %>
+  <%= link_to "Book Now", new_material_booking_path(material) %>
+>>>>>>> 8bbf6ea4138913ed0b58ffb753e42930dd7fb39f
 <% end %>
