@@ -14,8 +14,14 @@ puts "cleaning database"
 
 Booking.destroy_all
 Material.destroy_all
+<<<<<<< HEAD
+User.destroy_all
+Category.destroy_all
+
+=======
 Category.destroy_all
 User.destroy_all
+>>>>>>> 8bbf6ea4138913ed0b58ffb753e42930dd7fb39f
 
 
 puts "creating categories"
