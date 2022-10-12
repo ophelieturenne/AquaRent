@@ -1,11 +1,15 @@
 .cards {
-  color: white;
   display: grid;
   width: 100;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
   flex-grow: 1;
+}
+
+.card {
+  color: white;
+
 }
 
 .main-container {
