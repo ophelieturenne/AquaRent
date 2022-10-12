@@ -1,6 +1,7 @@
 <h1>show</h1>
 
 <% @materials.each do |material| %>
+  <%= cl_image_tag material.photo.key, height: 300, width: 400, crop: :fill %>
   <%= material.name %>
   <%= material.price %>
   <%= link_to "Book Now", new_material_booking_path(material) %>
