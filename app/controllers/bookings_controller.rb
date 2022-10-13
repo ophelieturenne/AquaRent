@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
+  helper_method :total
 
   def index
     @bookings = Booking.all
@@ -44,6 +45,14 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path, status: :see_other
+  end
+
+  def total
+    total = 0
+    @bookings.each do |booking|
+      total += booking.material.price
+    end
+    return total
   end
 
   private
