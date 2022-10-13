@@ -1,8 +1,22 @@
 <h3>Create a new booking</h3>
 
 <h4>Making a booking for <%= @material.name %> </h4>
+
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
 <%= simple_form_for ([@material, @booking]) do |f| %>
-  <%= f.input :start_date, as: :date, html5: true%>
-  <%= f.input :end_date, as: :date, html5: true%>
-  <%= f.submit class: 'btn btn-flat' %>
-<% end %>
+</div class = "container">
+  <div class = "row" >
+    <div class="col-12 col-lg-2">
+      <%= f.input :start_date, as: :date, html5: true%>
+  </div>
+  </div>
+
+  <div class = "row" >
+    <div class="col-12 col-lg-2">
+      <%= f.input :end_date, as: :date, html5: true%>
+    </div>
+  </div>
+      <%= f.submit class: 'btn btn-flat' %>
+  <% end %>
+</div>
