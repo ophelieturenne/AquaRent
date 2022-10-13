@@ -1,22 +1,20 @@
-<div class="d-flex justify-content-center">
-  <div class="cards">
-    <div class="card-category bg-white rounded shadow" >
-      <h4>Creating a new booking for, <strong><%= @material.name %></strong></h4>
-      <%if @material.photo.attached? %>
-        <%= cl_image_tag @material.photo.key, height: 500, width: 400, :crop => "fit" %>
-      <%else%>
-        <img src="https://res.cloudinary.com/dvp1v2dej/image/upload/v1665598402/aquarent/water_tzufvy.jpg" />
-      <%end %>
+<div class = "container">
+    <div class="booking-container">
+      <div class="booking-content-left bg-white shadow justify-content-center" >
+        <h4>Creating a new booking for <strong><%= @material.name %></strong></h4>
+        <%if @material.photo.attached? %>
+          <%= cl_image_tag @material.photo.key, :crop => "fit" %>
+        <%else%>
+          <img src="https://res.cloudinary.com/dvp1v2dej/image/upload/v1665598402/aquarent/water_tzufvy.jpg" />
+        <%end %>
+      </div>
+
+      <div class="booking-content-right bg-white shadow" >
+        <%= simple_form_for ([@material, @booking]) do |f| %>
+        <%= f.input :start_date, as: :date, html5: true%>
+        <%= f.input :end_date, as: :date, html5: true%>
+        <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
+      </div>
     </div>
-
-    <div class="card-category bg-white rounded shadow" >
-      <%= simple_form_for ([@material, @booking]) do |f| %>
-      <%= f.input :start_date, as: :date, html5: true%>
-      <%= f.input :end_date, as: :date, html5: true%>
-      <%= f.submit class: 'btn btn-flat' %>
-      <% end %>
-    </div>
-
-  </div>
-
 </div>
