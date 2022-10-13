@@ -1,15 +1,15 @@
 <div class = "container">
     <div class="booking-container">
-      <div class="bg-white rounded shadow p-3" >
+      <div class="booking-content-left bg-white shadow justify-content-center" >
         <h4>Creating a new booking for <strong><%= @material.name %></strong></h4>
         <%if @material.photo.attached? %>
-          <%= cl_image_tag @material.photo.key, height: 500, width: 400, :crop => "fit" %>
+          <%= cl_image_tag @material.photo.key, :crop => "fit" %>
         <%else%>
           <img src="https://res.cloudinary.com/dvp1v2dej/image/upload/v1665598402/aquarent/water_tzufvy.jpg" />
         <%end %>
       </div>
 
-      <div class="bg-white rounded shadow" >
+      <div class="booking-content-right bg-white shadow" >
         <%= simple_form_for ([@material, @booking]) do |f| %>
         <%= f.input :start_date, as: :date, html5: true%>
         <%= f.input :end_date, as: :date, html5: true%>
