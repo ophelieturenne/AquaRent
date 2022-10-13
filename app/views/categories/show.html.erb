@@ -16,17 +16,17 @@
 <%# taken from ui kit le wagon %>
 <%# It will do a loop on the information from the material table %>
 
-<div class="container py-4">
+<div class="container vh-100 py-4 mb-4">
   <div class="row my-2">
     <% @materials.each do |material| %>
       <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
         <div class="bg-white rounded shadow h-100">
           <%= cl_image_tag material.photo.key, class: "movie-img rounded-top", crop: :fill %>
           <div class="p-3 rounded-bottom d-flex flex-column">
-            <h5 class="text-muted font-weight-normal">Material: <%= material.name %></h5>
-            <h5 class="text-muted font-weight-normal">Price: Rs <%= material.price %></h5>
+            <h5 class="text-muted font-weight-normal"><strong>Material:</strong>  <%= material.name %></h5>
+            <h5 class="text-muted font-weight-normal"><strong>Price:</strong> Rs <%= material.price %></h5>
             <div class="d-flex align-items-end justify-content-between pt-4">
-              <small class="text-right flex-shrink-0"><%= link_to "Book Now", new_material_booking_path(material) %></small>
+              <small class="text-right flex-shrink-0"><%= link_to "Book Now", new_material_booking_path(material), class: 'links' %></small>
             </div>
           </div>
         </div>
