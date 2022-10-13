@@ -1,22 +1,21 @@
-<h3>Create a new booking</h3>
-
-<h4>Making a booking for <%= @material.name %> </h4>
-
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-<%= simple_form_for ([@material, @booking]) do |f| %>
-</div class = "container">
-  <div class = "row" >
-    <div class="col-12 col-lg-2">
-      <%= f.input :start_date, as: :date, html5: true%>
-  </div>
-  </div>
-
-  <div class = "row" >
-    <div class="col-12 col-lg-2">
-      <%= f.input :end_date, as: :date, html5: true%>
+<div class="d-flex justify-content-center">
+  <div class="cards">
+    <div class="card-category bg-white rounded shadow" >
+      <h4>Creating a new booking for, <strong><%= @material.name %></strong></h4>
+      <%if @material.photo.attached? %>
+        <%= cl_image_tag @material.photo.key, height: 500, width: 400, :crop => "fit" %>
+      <%else%>
+        <img src="https://res.cloudinary.com/dvp1v2dej/image/upload/v1665598402/aquarent/water_tzufvy.jpg" />
+      <%end %>
     </div>
-  </div>
+
+    <div class="card-category bg-white rounded shadow" >
+      <%= simple_form_for ([@material, @booking]) do |f| %>
+      <%= f.input :start_date, as: :date, html5: true%>
+      <%= f.input :end_date, as: :date, html5: true%>
       <%= f.submit class: 'btn btn-flat' %>
-  <% end %>
+      <% end %>
+    </div>
+
+  </div>
 </div>
