@@ -6,24 +6,27 @@
 </div>
 
 <div class="container vh-100 py-4">
-  <div class="cards-cat">
+  <div class="cards-cat ">
     <%if @bookings.empty?%>
       <h2 class="text-center"><i class="fas fa-sad-tear"></i></h2>
       <p class="text-center">You don't have any bookings...</p>
     <%else%>
       <% @bookings.each do |booking| %>
-        <div class="card-product mb-4">
+        <div class="card-product mb-4 ">
           <%if booking.material.photo.attached? %>
             <%= cl_image_tag booking.material.photo.key, height: 500, width: 400, :crop => "fit" %>
           <%else%>
             <img src="https://res.cloudinary.com/dvp1v2dej/image/upload/v1665598402/aquarent/water_tzufvy.jpg" />
           <%end %>
-          <div class="card-product-infos">
+          <div class="card-product-infos ">
             <h2><%= booking.material.name%></h2>
             <p>You've booked me for <strong><%= "#{booking.start_date} to #{booking.end_date}" %></p>
           </div>
-          <%= link_to "Edit", edit_material_booking_path(booking.material, booking)%>
-          <%= link_to "delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this booking"} %>
+          <p>RS</p><%= booking.material.price%>
+          <div class = "card-product-btn">
+            <%= link_to "Edit", edit_material_booking_path(booking.material, booking)%>
+            <%= link_to "delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this booking"} %>
+          </div>
         </div>
       <% end %>
       <br>
