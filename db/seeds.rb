@@ -14,8 +14,9 @@ puts "cleaning database"
 
 Booking.destroy_all
 Material.destroy_all
-Category.destroy_all
 User.destroy_all
+Category.destroy_all
+
 
 puts "creating categories"
 category1 = Category.new(name: "Boards")

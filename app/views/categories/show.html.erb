@@ -1,32 +1,28 @@
-<h1>show</h1>
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/dvp1v2dej/image/upload/v1665595151/aquarent/banner_tja4uj.jpg);">
+  <div class="container">
+    <h1 class="mb-2" >Category <%= @category.name %></h1>
+    <small class="text-white" ><%= @category.materials.count %> equipment available</small>
+  </div>
+</div>
 
 <%# taken from ui kit le wagon %>
 <%# It will do a loop on the information from the material table %>
-<% @materials.each do |material| %>
-<<<<<<< HEAD
-<div>
-  <div class="cards">
-    <div class = "background_card">
-        <div class="card-category card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        </div>
-        <div class="cards_2 p-1">
-          <div class="card-category">
-            <h5>Material: <%= material.name %></h5>
-            <h5>Rating: <%= material.price %></h5>
-          </div>
-          <div class="card-category card_2">
-            <h5><%= link_to "Book Now", new_material_booking_path(material) %></h5>
-          </div>
-        </div>
-    </div>
 
+<div class="container py-4">
+  <div class="row my-2">
+    <% @materials.each do |material| %>
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="bg-white rounded shadow h-100">
+          <%= cl_image_tag material.photo.key, class: "movie-img rounded-top", crop: :fill %>
+          <div class="p-3 rounded-bottom d-flex flex-column">
+            <h5 class="text-muted font-weight-normal">Material: <%= material.name %></h5>
+            <h5 class="text-muted font-weight-normal">Price: Rs <%= material.price %></h5>
+            <div class="d-flex align-items-end justify-content-between pt-4">
+              <small class="text-right flex-shrink-0"><%= link_to "Book Now", new_material_booking_path(material) %></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
-=======
-  <%= cl_image_tag material.photo.key, height: 300, width: 400, crop: :fill %>
-  <%= material.name %>
-  <%= material.price %>
-  <%= link_to "Book Now", new_material_booking_path(material) %>
->>>>>>> 8bbf6ea4138913ed0b58ffb753e42930dd7fb39f
-<% end %>
