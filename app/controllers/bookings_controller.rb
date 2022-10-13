@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   helper_method :total
 
+
   def index
     @bookings = Booking.where(user: current_user)
   end
