@@ -1,6 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/dvp1v2dej/image/upload/v1665595151/aquarent/banner_tja4uj.jpg);">
   <div class="container">
     <h1 class="mb-2" >Category <%= @category.name %></h1>
+    <%= form_with url: category_path(@category), method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find your equipment"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
     <small class="text-white" ><%= @category.materials.count %> equipment available</small>
   </div>
 </div>
