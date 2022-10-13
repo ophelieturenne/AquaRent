@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   helper_method :total
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
   end
 
   def new
