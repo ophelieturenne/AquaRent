@@ -1,33 +1,56 @@
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/dvp1v2dej/image/upload/v1665595151/aquarent/banner_tja4uj.jpg);">
   <div class="container">
     <h1 class="mb-2" >Welcome to AquaRent</h1>
     <p>Everything You Need. All Right Here !<br>you can find and rent from a variety of nautics equipment.</p>
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query"  placeholder= "Find your equipment here..."/>
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> Search
-        </button>
-      </div>
+   <%= form_with url: categories_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find your equiment"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
 
 
-<div class="container py-4">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-  <h3>Let's choose your equipment category</h3>
-  </div>
-  <div class="row">
-    <% @categories.each do |category| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
-        <%= link_to category_path(category), class:"text-decoration-none text_for_card" do %>
-          <div class="card-cat" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dvp1v2dej/image/upload/v1665598402/aquarent/water_tzufvy.jpg)">
-            <%= category.name %>
+<% if params[:query].present? %>
+  <div class="container py-4">
+  <div class="row my-2">
+    <% @materials.each do |material| %>
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="bg-white rounded shadow h-100">
+          <%= cl_image_tag material.photo.key, class: "movie-img rounded-top", crop: :fill %>
+          <div class="p-3 rounded-bottom d-flex flex-column">
+            <h5 class="text-muted font-weight-normal">Material: <%= material.name %></h5>
+            <h5 class="text-muted font-weight-normal">Price: Rs <%= material.price %></h5>
+            <div class="d-flex align-items-end justify-content-between pt-4">
+              <small class="text-right flex-shrink-0"><%= link_to "Book Now", new_material_booking_path(material) %></small>
+            </div>
           </div>
-        <% end %>
+        </div>
       </div>
     <% end %>
   </div>
-</div>
+
+
+
+
+<% else %>
+  <div class="container py-4">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3>Let's choose your equipment category</h3>
+    </div>
+    <div class="row">
+      <% @categories.each do |category| %>
+        <div class="co-12 col-sm-6 col-md-4 mb-3">
+          <%= link_to category_path(category), class:"text-decoration-none text_for_card" do %>
+            <div class="card-cat" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dvp1v2dej/image/upload/v1665598402/aquarent/water_tzufvy.jpg)">
+              <%= category.name %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
