@@ -13,20 +13,21 @@
     <%else%>
       <% @bookings.each do |booking| %>
         <div class="card-product mb-4">
-          <%if booking.photo.attached? %>
-            <%= cl_image_tag booking.material_id.photo.key, height: 500, width: 400, :crop => "fit" %>
+          <%if booking.material.photo.attached? %>
+            <%= cl_image_tag booking.material.photo.key, height: 500, width: 400, :crop => "fit" %>
           <%else%>
             <img src="https://res.cloudinary.com/dvp1v2dej/image/upload/v1665598402/aquarent/water_tzufvy.jpg" />
-          <%end%>
+          <%end %>
           <div class="card-product-infos">
             <h2><%= booking.material.name%></h2>
             <p>You've booked me for <strong><%= "#{booking.start_date} to #{booking.end_date}" %></p>
           </div>
+          <%= link_to "Edit", edit_material_booking_path(booking.material, booking)%>
           <%= link_to "delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this booking"} %>
         </div>
       <% end %>
       <br>
-      Total price: <strong>Rs <%= @total %></strong>
+      Total price: <strong>Rs <%= total %></strong>
       <hr>
         <button type="button" class="btn btn-primary">
           <h3 class="text-white">Checkout</h3>
