@@ -22,6 +22,7 @@
             <h2><%= booking.material.name%></h2>
             <p>You've booked me for <strong><%= "#{booking.start_date} to #{booking.end_date}" %></p>
           </div>
+          <%= link_to "Edit", edit_material_booking_path(booking.material, booking)%>
           <%= link_to "delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this booking"} %>
         </div>
       <% end %>

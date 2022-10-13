@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-
     @material = Material.find(params[:material_id])
     @booking = Booking.new(booking_params)
     @booking.material = @material
@@ -25,6 +24,20 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @material = Material.find(params[:material_id])
+    @booking = Booking.find(params[:id])
+
+  end
+
+  def update
+    @material = Material.find(params[:material_id])
+    @booking = Booking.find(params[:id])
+    @booking.material = @material
+    if @booking.update(booking_params)
+      redirect_to bookings_path, notice: "list was successfully updated."
+    else
+      render :edit
+    end
   end
 
   def destroy
