@@ -207,7 +207,7 @@ puts "creating bookmarks"
 # bookings
 d1 = DateTime.new(2015, 6, 22)
 d2 = DateTime.new(2017, 6, 22)
-booking1 = Booking.create(start_date: d1, end_date: d2, total_price: 6.9, material: material1, user: user1)
+booking1 = Booking.create(start_date: d1, end_date: d2, material: material1, user: user1)
 booking1.save
 
 
