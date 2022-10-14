@@ -24,7 +24,7 @@
           <%= cl_image_tag material.photo.key, class: "movie-img rounded-top", crop: :fill %>
           <div class="p-3 rounded-bottom d-flex flex-column">
             <h5 class="text-muted font-weight-normal"><strong>Material:</strong>  <%= material.name %></h5>
-            <h5 class="text-muted font-weight-normal"><strong>Price:</strong> Rs <%= material.price %></h5>
+            <h5 class="text-muted font-weight-normal"><strong>Price:</strong> Rs <%= material.price.to_i %></h5>
             <div class="d-flex align-items-end justify-content-between pt-4">
               <small class="text-right flex-shrink-0"><%= link_to "Book Now", new_material_booking_path(material), class: 'links' %></small>
             </div>
