@@ -1,3 +1,4 @@
+<button class="btn text-white m-3" style="background-color:#28CCED" onclick="history.back()">Go Back</button>
 <h4>Updating my booking for <%= @material.name %> </h4>
 <%= simple_form_for ([@material, @booking]) do |f| %>
   <%= f.input :start_date, as: :date, html5: true%>
