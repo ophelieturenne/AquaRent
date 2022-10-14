@@ -6,7 +6,7 @@
       <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Find your equiment"
+          placeholder: "Find your equiment..."
       %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
@@ -33,14 +33,9 @@
     <% end %>
   </div>
 
-
-
-
 <% else %>
-  <div class="container vh-100 py-4">
-    <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3>Let's choose your equipment category</h3>
-    </div>
+  <div class="container py-4 mb-4">
+    <h3 class="text-center mb-4">Let's choose your equipment category</h3>
     <div class="row">
       <% @categories.each do |category| %>
         <div class="co-12 col-sm-6 col-md-4 mb-3">
