@@ -143,7 +143,7 @@ material20 = Material.new(name: "Paddle Board", price: 300, category: category1)
 material20.photo.attach(io: file, filename: "Paddle board.png", content_type: "image/png")
 material20.save
 
-file = URI.open("https://res.cloudinary.com/dvp1v2dej/image/upload/v1665734110/aquarent/trampoline_mctl9z.jpg")
+file = URI.open("https://res.cloudinary.com/dvp1v2dej/image/upload/v1665741038/aquarent/trampoline_l5vgev.jpg")
 material21 = Material.new(name: "Trampoline", price: 400, category: category3)
 material21.photo.attach(io: file, filename: "Trampoline.png", content_type: "image/png")
 material21.save
