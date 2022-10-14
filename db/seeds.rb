@@ -21,9 +21,10 @@ Category.destroy_all
 puts "creating categories"
 category1 = Category.new(name: "Boards")
 category2 = Category.new(name: "Sailings")
-category3 = Category.new(name: "Others")
+category3 = Category.new(name: "Underwater")
 category4 = Category.new(name: "Pool Floats")
 category5 = Category.new(name: "Boats")
+category6 = Category.new(name: "Others")
 
 
 
@@ -64,7 +65,7 @@ material4.photo.attach(io: file, filename: "wind_foiling.png", content_type: "im
 material4.save
 
 file = URI.open("https://res.cloudinary.com/dvp1v2dej/image/upload/v1665561890/aquarent/fishing_rod_xopehu.jpg")
-material5 = Material.new(name: "fishing Rod", price: 100, category: category3)
+material5 = Material.new(name: "fishing Rod", price: 100, category: category6)
 material5.photo.attach(io: file, filename: "fishing_rod.png", content_type: "image/png")
 material5.save
 
@@ -94,7 +95,7 @@ material10.photo.attach(io: file, filename: "Snorkeling.png", content_type: "ima
 material10.save
 
 file = URI.open("https://res.cloudinary.com/dvp1v2dej/image/upload/v1665736593/aquarent/jetski_lnqyes.jpg")
-material11 = Material.new(name: "Jetski", price: 1000, category: category3)
+material11 = Material.new(name: "Jetski", price: 1000, category: category6)
 material11.photo.attach(io: file, filename: "Jetski.png", content_type: "image/png")
 material11.save
 
@@ -134,7 +135,7 @@ material18.photo.attach(io: file, filename: "Long pool floats.png", content_type
 material18.save
 
 file = URI.open("https://res.cloudinary.com/dvp1v2dej/image/upload/v1665736063/aquarent/Parasol_yb7aqa.jpg")
-material19 = Material.new(name: "Beach Parasol", price: 150, category: category3)
+material19 = Material.new(name: "Beach Parasol", price: 150, category: category6)
 material19.photo.attach(io: file, filename: "Beach Parasol.png", content_type: "image/png")
 material19.save
 
@@ -144,7 +145,7 @@ material20.photo.attach(io: file, filename: "Paddle board.png", content_type: "i
 material20.save
 
 file = URI.open("https://res.cloudinary.com/dvp1v2dej/image/upload/v1665741038/aquarent/trampoline_l5vgev.jpg")
-material21 = Material.new(name: "Trampoline", price: 400, category: category3)
+material21 = Material.new(name: "Trampoline", price: 400, category: category6)
 material21.photo.attach(io: file, filename: "Trampoline.png", content_type: "image/png")
 material21.save
 
@@ -158,46 +159,47 @@ material23 = Material.new(name: "Pedalo(2p)", price: 600, category: category5)
 material23.photo.attach(io: file, filename: "Pedalo2p.png", content_type: "image/png")
 material23.save
 
+#ADDING NEW ITEMS
+
 # file = URI.open("")
-# material = Material.new(name: "", price: 400, category: category)
+# material = Material.new(name: "", price: , category: category)
 # material.photo.attach(io: file, filename: ".png", content_type: "image/png")
 # material.save
 
 # file = URI.open("")
-# material = Material.new(name: "", price: 400, category: category)
+# material = Material.new(name: "", price: , category: category)
 # material.photo.attach(io: file, filename: ".png", content_type: "image/png")
 # material.save
 
 # file = URI.open("")
-# material = Material.new(name: "", price: 400, category: category)
+# material = Material.new(name: "", price: , category: category)
 # material.photo.attach(io: file, filename: ".png", content_type: "image/png")
 # material.save
 
 # file = URI.open("")
-# material = Material.new(name: "", price: 400, category: category)
+# material = Material.new(name: "", price: , category: category)
 # material.photo.attach(io: file, filename: ".png", content_type: "image/png")
 # material.save
 
 # file = URI.open("")
-# material = Material.new(name: "", price: 400, category: category)
+# material = Material.new(name: "", price: , category: category)
 # material.photo.attach(io: file, filename: ".png", content_type: "image/png")
 # material.save
 
 # file = URI.open("")
-# material = Material.new(name: "", price: 400, category: category)
+# material = Material.new(name: "", price: , category: category)
 # material.photo.attach(io: file, filename: ".png", content_type: "image/png")
 # material.save
 
 # file = URI.open("")
-# material = Material.new(name: "", price: 400, category: category)
+# material = Material.new(name: "", price: , category: category)
 # material.photo.attach(io: file, filename: ".png", content_type: "image/png")
 # material.save
 
 # file = URI.open("")
-# material = Material.new(name: "", price: 400, category: category)
+# material = Material.new(name: "", price: , category: category)
 # material.photo.attach(io: file, filename: ".png", content_type: "image/png")
 # material.save
-
 
 puts "creating users"
 user1 = User.new(email: "john@gmail.com", password: "123456")
@@ -209,7 +211,5 @@ d1 = DateTime.new(2015, 6, 22)
 d2 = DateTime.new(2017, 6, 22)
 booking1 = Booking.create(start_date: d1, end_date: d2, material: material1, user: user1)
 booking1.save
-
-
 
 puts "Finished"
